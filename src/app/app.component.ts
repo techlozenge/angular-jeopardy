@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { JeopardyService } from './jeopardy.service';
 
 @Component({
   selector: 'app-root',

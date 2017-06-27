@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { HttpModule } from '@angular/http';
+import { JeopardyService } from './jeopardy.service';
+
 import { JeopardyComponent } from './jeopardy/jeopardy.component';
 
 @NgModule({
@@ -10,9 +13,10 @@ import { JeopardyComponent } from './jeopardy/jeopardy.component';
     JeopardyComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [JeopardyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
