@@ -22,7 +22,7 @@ export class JeopardyService {
 
     private extractData(res: Response) {
         let results = res.json();
-        console.log(results);
+        //console.log(results);
         return results || [];
     }
 

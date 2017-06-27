@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { JeopardyService } from '../jeopardy.service'
 
@@ -11,12 +11,15 @@ export class JeopardyComponent implements OnInit {
 
   errorMessage: string;
   successMessage: string;
-  question: any[];
+
+  // i took '[]' off 'any' which exposes the object contents
+  question: any;
+
   mode = 'Observable';
 
   userAnswer: string;
-  userPoints: string;
-  userTotalPoints: string;
+  userPoints = 0;
+  userTotalPoints = 0;
 
   constructor (private dataService: JeopardyService) {}
  
@@ -31,7 +34,10 @@ export class JeopardyComponent implements OnInit {
   }
 
   onClickMe() {
-      console.log(this.userAnswer);
+      console.log("User Answer: " + this.userAnswer);
+      console.log("Question: " + this.question.question);
+      console.log("Answer: " + this.question.answer);
+      console.log("Value: " + this.question.value);
+      this.getQuestion();
     }
-
 }

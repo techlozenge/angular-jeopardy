@@ -15,6 +15,7 @@
           <th>Question</th>
           <th>Answer</th>
           <th>Value</th>
+          <th>Category</th>
         <tr>
       </thead>
       <tbody>
@@ -22,24 +23,16 @@
           <td>{{question?.question}}</td>
           <td>{{question?.answer}}</td>
           <td>{{question?.value}}</td>
+          <td>{{question?.category.title}}</td>
         </tr>
       </tbody>
     </table>
 
     <p><b>What is...</b></p>
-
-    <textarea [(ngModel)]="userAnswer" class="form-control" rows="3"></textarea>
-    <br>
-
-    <label>User Points</label>
-    <input [(ngModel)]="userPoints" type="text" class="form-control" disabled>
-    <br>
-
-    <label>User Total</label>
-    <input [(ngModel)]="userTotalPoints" type="text" class="form-control" disabled>
-    <br>
-
-    <button (click)="onClickMe()">GUESS</button>
+    <textarea [(ngModel)]="userAnswer" class="form-control" rows="3"></textarea><br>
+    <label>User Points:</label>&nbsp; &nbsp;<label>{{userPoints}}</label><br>
+    <label>User Total:</label>&nbsp; &nbsp;<label>{{userTotalPoints}}</label><br>
+    <button (click)="onClickMe()">Guess</button>
 
   </div>
 </div>
