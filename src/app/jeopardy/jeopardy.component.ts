@@ -13,7 +13,11 @@ export class JeopardyComponent implements OnInit {
   successMessage: string;
   question: any[];
   mode = 'Observable';
- 
+
+  userAnswer: string;
+  userPoints: string;
+  userTotalPoints: string;
+
   constructor (private dataService: JeopardyService) {}
  
   ngOnInit() { this.getQuestion(); }
@@ -21,8 +25,13 @@ export class JeopardyComponent implements OnInit {
   getQuestion() {
     this.dataService.getRecord() 
       .subscribe(
-        question => this.question = question,
+        // we are only ever getting an array of 1 back so this will obtain that:
+        question => this.question = question[0],
         error =>  this.errorMessage = <any>error);
   }
+
+  onClickMe() {
+      console.log(this.userAnswer);
+    }
 
 }
