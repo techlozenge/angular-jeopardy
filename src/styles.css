@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: pink;
+    font-size: 20px;
+}
+
+.answer {
+    margin-left: 20px;
+}
+
+#guess {
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    margin-left: 20px;
+}
+
+#whatis {
+    margin-left: 5px;
+}
