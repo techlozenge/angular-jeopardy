@@ -1,3 +1,7 @@
+This app hooks up a data service which is used to make a request and receive results from http://jservice.io/api/random.
+From the results it extracts the question, answer, and the questions point value. The user enters their answer and upon clicking the "guess" buttontheir answer is compared to the retrieved answer. If correct, points are assigned and displayed to the user.
+
+
 # AngularJeopardy
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.3.

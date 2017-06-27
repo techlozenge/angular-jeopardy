@@ -19,7 +19,6 @@ export class JeopardyComponent implements OnInit {
 
   userAnswer: string;
   userPoints = 0;
-  userTotalPoints = 0;
 
   constructor (private dataService: JeopardyService) {}
  
@@ -38,6 +37,8 @@ export class JeopardyComponent implements OnInit {
       console.log("Question: " + this.question.question);
       console.log("Answer: " + this.question.answer);
       console.log("Value: " + this.question.value);
+      // comparison and math can be done here and points assigned if their answer is correct
+      // obtain the next question
       this.getQuestion();
     }
 }
