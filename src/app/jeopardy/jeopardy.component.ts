@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core'
-
+import { Component, OnInit } from '@angular/core'
 import { JeopardyService } from '../jeopardy.service'
 
 @Component({
@@ -19,11 +18,11 @@ export class JeopardyComponent implements OnInit {
 
   userAnswer: string;
   userPoints = 0;
-  x: string;
-  y: string;
+  lastUserAnswer: string;
+  lastJeopardyAnswer: string;
 
   constructor (private dataService: JeopardyService) {}
- 
+
   ngOnInit() { this.getQuestion(); }
  
   getQuestion() {
@@ -43,6 +42,9 @@ export class JeopardyComponent implements OnInit {
       if (this.userAnswer.toLowerCase() == this.question.answer.toLowerCase()) {
           this.userPoints = this.userPoints += this.question.value;
       }
+
+      this.lastJeopardyAnswer = this.question.answer
+      this.lastUserAnswer = this.userAnswer;
 
       this.userAnswer = "";
       this.getQuestion();

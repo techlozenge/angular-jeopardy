@@ -8,7 +8,7 @@
 </div>
 
 <div class="row">
-   <div class="col-md-8">
+   <div class="col-md-8 col-sm-4">
     <table class="table table-sm table-striped table-bordered">
       <thead class="thead-inverse">
         <tr>
@@ -20,10 +20,10 @@
       </thead>
       <tbody>
         <tr>
-          <td>{{question?.question}}</td>
-          <td>{{question?.answer}}</td>
-          <td>{{question?.value}}</td>
-          <td>{{question?.category.title}}</td>
+          <td class="col-md-1">{{question?.question}}</td>
+          <td class="col-md-1">{{question?.answer}}</td>
+          <td class="col-md-1">{{question?.value}}</td>
+          <td class="col-md-1">{{question?.category.title}}</td>
         </tr>
       </tbody>
     </table>
@@ -31,7 +31,10 @@
     <p><b>What is...</b></p>
     <textarea [(ngModel)]="userAnswer" class="form-control" rows="3"></textarea><br>
     <label>User Points:</label>&nbsp; &nbsp;<label>{{userPoints}}</label><br>
+    <br><br>
     <button (click)="onClickMe()">Guess</button>
+    <br><br>
+    <app-answer [lastJeopardyAnswer]="lastJeopardyAnswer" [lastUserAnswer]="lastUserAnswer"></app-answer>
 
   </div>
 </div>
