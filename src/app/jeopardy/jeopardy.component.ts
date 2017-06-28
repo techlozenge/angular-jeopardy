@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core'
 
 import { JeopardyService } from '../jeopardy.service'
 
@@ -19,6 +19,8 @@ export class JeopardyComponent implements OnInit {
 
   userAnswer: string;
   userPoints = 0;
+  x: string;
+  y: string;
 
   constructor (private dataService: JeopardyService) {}
  
@@ -37,8 +39,12 @@ export class JeopardyComponent implements OnInit {
       console.log("Question: " + this.question.question);
       console.log("Answer: " + this.question.answer);
       console.log("Value: " + this.question.value);
-      // comparison and math can be done here and points assigned if their answer is correct
-      // obtain the next question
+
+      if (this.userAnswer.toLowerCase() == this.question.answer.toLowerCase()) {
+          this.userPoints = this.userPoints += this.question.value;
+      }
+
+      this.userAnswer = "";
       this.getQuestion();
     }
 }
