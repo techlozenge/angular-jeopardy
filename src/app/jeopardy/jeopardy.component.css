@@ -1,0 +1,27 @@
+.cover{
+    padding: 10px;
+    border: 10px; 
+    border-color: black;
+    background-color: peachpuff;
+    height: 1028px; 
+}
+
+h1{
+    margin-bottom: 50px;
+    color: maroon;
+    text-shadow: 3px 3px white;
+}
+
+button {
+    margin-bottom: 25px;
+    height: 40px;
+    width: 100px;
+    font-size: 20px;
+    background: maroon;
+    text-align: center;
+    color: white;
+}
+
+.form-control{
+    width: 300px;
+}

@@ -7,8 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AnswerComponent implements OnInit {
 
-  @Input() lastJeopardyAnswer: string;
-  @Input() lastUserAnswer: string;
+  @Input() playerInputAnswer: string;
+  @Input() message: string;
+  @Input() actualJeopardyAnswer: string;
+  @Input() playerPoints: number;
 
   constructor() { }
 
@@ -16,3 +18,4 @@ export class AnswerComponent implements OnInit {
   }
 
 }
+

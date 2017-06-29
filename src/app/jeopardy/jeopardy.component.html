@@ -1,4 +1,6 @@
-<h1 class="text-center">Jeopardy Lite</h1>
+
+<div class="cover">
+<h1 class="text-center">Welcome to Jeopardy Lite!</h1>
 
 <div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage">
     {{errorMessage}} {{successMessage}}
@@ -7,34 +9,64 @@
     </button>
 </div>
 
-<div class="row">
-   <div class="col-md-8 col-sm-4">
-    <table class="table table-sm table-striped table-bordered">
-      <thead class="thead-inverse">
+<div>
+    <table id="question" class="table table-striped">
         <tr>
-          <th>Question</th>
-          <th>Answer</th>
-          <th>Value</th>
-          <th>Category</th>
-        <tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="col-md-1">{{question?.question}}</td>
-          <td class="col-md-1">{{question?.answer}}</td>
-          <td class="col-md-1">{{question?.value}}</td>
-          <td class="col-md-1">{{question?.category.title}}</td>
+          <!-- the '?' means if the value is null to fail silently -->
+          <th class="col-md-1">Category_Title:</th>
+          <td class="col-md-2">{{question?.category?.title}}</td>
         </tr>
-      </tbody>
+        <tr>
+          <th class="col-md-1">Question:</th>
+          <td class="col-md-2">{{question?.question}}</td>
+        </tr>
+        <tr>
+          <th class="col-md-1">Question Points:</th>
+          <td class="col-md-2">{{question?.value}}</td>
+        </tr>
     </table>
-
-    <p><b>What is...</b></p>
-    <textarea [(ngModel)]="userAnswer" class="form-control" rows="3"></textarea><br>
-    <label>User Points:</label>&nbsp; &nbsp;<label>{{userPoints}}</label><br>
-    <br><br>
-    <button (click)="onClickMe()">Guess</button>
-    <br><br>
-    <app-answer [lastJeopardyAnswer]="lastJeopardyAnswer" [lastUserAnswer]="lastUserAnswer"></app-answer>
-
   </div>
+
+    <div>
+    <textarea [(ngModel)]="userAnswer" class="form-control" rows="3"></textarea><br>
+     <div>
+
+    <div>
+    <button (click)="onClickMe()" class="btn submit">Submit</button>
+    </div>
+
+    <div>
+     <app-answer [playerInputAnswer]="playerInputAnswer" [message]="message" 
+     [actualJeopardyAnswer]="actualJeopardyAnswer" [playerPoints]="playerPoints"></app-answer>
+    </div>
 </div>
+
+<!--Below is another form of UI  layout
+<div>
+  <label >Category_Title: {{question?.category?.title}} </label><br />
+  <label >Question: {{question?.question}}</label><br />
+  <label >Question Points: {{question?.value}}</label><br />
+</div>
+
+
+ <div>
+     <textarea [(ngModel)]="userAnswer" class="form-control" rows="3" width = "50px"></textarea><br>
+</div>
+
+<div>
+    <button (click)="onClickMe()" class="btn submit">Submit</button>
+</div>
+
+<div >
+    <label id="success">{{successmessage}}</label><br />
+   <label id="failure">{{failuremessage}}</label><br />
+</div>
+
+
+<div>
+  <label for="player_answer" class="player_answer">Player_Answer: {{playerInputAnswer}} </label><br />
+  <label for="jeopardy_answer" clas="jeopardy_answer">Jeopardy_Answer: {{actualJeopardyAnswer}}</label><br />
+  <label for="player_points" class="player_points">Player_Points: {{playerPoints}}</label><br/>
+</div>-->
+
+

@@ -1,4 +1,20 @@
-<label>Jeopardy Answer:</label>&nbsp; &nbsp;<label>{{lastJeopardyAnswer}}</label>
-<br><br>
-<label>Your Answer:</label>&nbsp; &nbsp;<label>{{lastUserAnswer}}</label>
-
+<div>
+    <table id="answer" class="table table-striped ">
+        <tr>
+          <th class="col-md-1">Player_Answer:</th>
+          <td class="col-md-2">{{playerInputAnswer}} </td>
+        </tr>
+        <tr>
+          <th class="col-md-1">Result:</th>
+          <td class="col-md-2">{{message}}</td>
+        </tr>
+        <tr>
+          <th class="col-md-1">Jeopardy_Answer:</th>
+          <td class="col-md-2">{{actualJeopardyAnswer}}</td>
+        </tr>
+        <tr>
+          <th class="col-md-1">Player_Points:</th>
+          <td class="col-md-2">{{playerPoints}}</td>
+        </tr>
+    </table>
+  </div>  
